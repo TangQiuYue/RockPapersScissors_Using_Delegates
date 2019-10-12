@@ -1,0 +1,16 @@
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\bin\Debug\RockPapersScissors.exe.config
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\bin\Debug\RockPapersScissors.exe
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\bin\Debug\RockPapersScissors.pdb
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\RockPapersScissors.csprojResolveAssemblyReference.cache
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\App.g.cs
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\RockPapersScissors_MarkupCompile.cache
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\RockPapersScissors_MarkupCompile.lref
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\RockPapersScissors.g.resources
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\RockPapersScissors.Properties.Resources.resources
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\RockPapersScissors.csproj.GenerateResource.Cache
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\RockPapersScissors.exe
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\RockPapersScissors.pdb
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\MainWindow.g.cs
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\MainWindow.baml
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\GameInterface.g.cs
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\GameInterface.baml

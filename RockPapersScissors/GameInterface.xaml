@@ -1,0 +1,53 @@
+﻿<Window x:Class="RockPapersScissors.HumanVsHuman"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RockPapersScissors"
+        mc:Ignorable="d"
+        Title="HumanVsHuman" Height="500" Width="600" Background="White">
+    <Grid Margin="0,0,0,0">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/PVSP.png" Stretch="UniformToFill" Opacity="0.25"/>
+        </Grid.Background>
+        <Label x:Name="playerOneLbl" Content="Player One" HorizontalAlignment="Left" Margin="95,27,0,0" VerticalAlignment="Top" Width="111" Height="34" FontFamily="Trebuchet MS" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="playerTwoLbl" Content="Player Two" HorizontalAlignment="Left" Margin="389,27,0,0" VerticalAlignment="Top" Width="111" Height="34" FontFamily="Trebuchet MS" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="chooseLbl" Content="Choose Your Weapon!" HorizontalAlignment="Left" Margin="51,88,0,0" VerticalAlignment="Top" Width="208" Height="34" FontFamily="Trebuchet MS" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="chooseTwoLbl" Content="Choose Your Weapon!" HorizontalAlignment="Left" Margin="337,88,0,0" VerticalAlignment="Top" Width="208" Height="34" FontFamily="Trebuchet MS" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="rockBtn" Content="" HorizontalAlignment="Left" Margin="95,150,0,0" VerticalAlignment="Top" Width="92" Height="54" Click="rockBtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Rock.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="paperBtn" Content="" HorizontalAlignment="Left" Margin="31,252,0,0" VerticalAlignment="Top" Width="92" Height="54" Click="paperBtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Paper.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="rockTwoBtn" Content="" HorizontalAlignment="Left" Margin="389,150,0,0" VerticalAlignment="Top" Width="92" Height="54" Click="rockTwoBtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Rock.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="paperTwoBtn" Content="" HorizontalAlignment="Left" Margin="322,252,0,0" VerticalAlignment="Top" Width="92" Height="54" Click="paperTwoBtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Paper.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="scissorsBtn" Content="" HorizontalAlignment="Left" Margin="167,252,0,0" VerticalAlignment="Top" Width="92" Height="54" Click="scissorsBtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Scissors.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="scissorsTwoBtn" Content="" HorizontalAlignment="Left" Margin="467,252,0,0" VerticalAlignment="Top" Width="92" Height="54" Click="scissorsTwoBtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Scissors.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="weaponLbl" Content="Weapon" HorizontalAlignment="Left" Margin="110,333,0,0" VerticalAlignment="Top" FontFamily="Trebuchet MS" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="weaponTwoLbl" Content="Weapon" HorizontalAlignment="Left" Margin="404,333,0,0" VerticalAlignment="Top" FontFamily="Trebuchet MS" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="goBtn" Content="Go!" HorizontalAlignment="Left" Margin="259,355,0,0" VerticalAlignment="Top" Width="75" Background="#FFD81919" Click="goBtn_Click"/>
+        <Label x:Name="scoreBoardLbl" Content="{Binding scoreBoard}" HorizontalAlignment="Left" Margin="221,423,0,0" VerticalAlignment="Top" FontFamily="Trebuchet MS" FontSize="22" FontWeight="Bold"/>
+    </Grid>
+
+</Window>
