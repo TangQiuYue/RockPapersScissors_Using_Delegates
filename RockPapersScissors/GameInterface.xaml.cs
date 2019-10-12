@@ -20,13 +20,11 @@ namespace RockPapersScissors
     /// </summary>
     public partial class HumanVsHuman : Window
     {
-        MainWindow main;
         Control controller;
         public static string firstPlayerWeapon;
         public HumanVsHuman()
         {
             InitializeComponent();
-            main = new MainWindow();
             controller = new Control();
             lockPlay();
         }

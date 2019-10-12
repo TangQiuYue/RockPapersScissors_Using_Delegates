@@ -24,11 +24,11 @@ namespace RockPapersScissors
 
             switch (i)
             {
-                case 1: weapon = "rock";
+                case 1: weapon = "Rock";
                     break;
-                case 2: weapon = "paper";
+                case 2: weapon = "Paper";
                     break;
-                case 3: weapon = "scissors";
+                case 3: weapon = "Scissors";
                     break;
             }
 
@@ -45,11 +45,11 @@ namespace RockPapersScissors
             {
                 switch (priorWinner)
                 {
-                    case "rock":weapon = "paper";
+                    case "Rock":weapon = "Paper";
                         break;
-                    case "paper": weapon = "scissors";
+                    case "Paper": weapon = "Scissors";
                         break;
-                    case "scissors": weapon = "rock";
+                    case "Scissors": weapon = "Rock";
                         break;
                 }
             }
@@ -58,7 +58,7 @@ namespace RockPapersScissors
         }
         public void WhoWins(string weaponOne, string weaponTwo)
         {
-
+            Console.WriteLine(weaponOne + " and " + weaponTwo);
             int option = 0;
             if (weaponOne.Equals(weaponTwo))
             {
