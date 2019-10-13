@@ -8,6 +8,7 @@ namespace RockPapersScissors
 {
     class HumanPlayer : PlayerInterface
     {
+        Config config = Config.getConfig();
         private Weapons weapon;
 
         public Weapons chooseYourWeapon()
@@ -17,7 +18,7 @@ namespace RockPapersScissors
 
         public string getBehavior()
         {
-            return Config.humanBehavior;
+            return config.HumanBehavior;
         }
     }
 }

@@ -44,8 +44,6 @@
                 <ImageBrush ImageSource="Images/Scissors.png"/>
             </Button.Background>
         </Button>
-        <Label x:Name="weaponLbl" Content="Weapon" HorizontalAlignment="Left" Margin="110,333,0,0" VerticalAlignment="Top" FontFamily="Trebuchet MS" FontSize="18" FontWeight="Bold"/>
-        <Label x:Name="weaponTwoLbl" Content="Weapon" HorizontalAlignment="Left" Margin="404,333,0,0" VerticalAlignment="Top" FontFamily="Trebuchet MS" FontSize="18" FontWeight="Bold"/>
         <Button x:Name="goBtn" Content="Go!" HorizontalAlignment="Left" Margin="259,355,0,0" VerticalAlignment="Top" Width="75" Background="#FFD81919" Click="goBtn_Click"/>
         <Label x:Name="scoreBoardLbl" Content="{Binding scoreBoard}" HorizontalAlignment="Left" Margin="221,423,0,0" VerticalAlignment="Top" FontFamily="Trebuchet MS" FontSize="22" FontWeight="Bold"/>
     </Grid>

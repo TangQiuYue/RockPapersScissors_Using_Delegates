@@ -6,21 +6,19 @@ using System.Threading.Tasks;
 
 namespace RockPapersScissors
 {
-    class RandomComputerPlayer : PlayerInterface
-       
+    class RandomComputerPlayer : PlayerInterface   
     {
+        Config config = Config.getConfig();
         private Weapons weapon;
         public Weapons chooseYourWeapon()
         {
-
-            Random rando = new Random();
-            int i = rando.Next(1, 3);
+           
+            int i = config.Rando.Next(1, 3);
 
             switch (i)
             {
                 case 1:
                     weapon = Weapons.ROCK;
-
                     break;
                 case 2:
                     weapon = Weapons.PAPER;
@@ -29,12 +27,12 @@ namespace RockPapersScissors
                     weapon = Weapons.SCISSORS;
                     break;
             }
-
+            Console.WriteLine(i);
             return weapon;
         }
               public string getBehavior()
         {
-            return Config.randomBehavior;
+            return config.RandomBehavior;
         }
     }
 }

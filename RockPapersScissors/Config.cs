@@ -10,17 +10,43 @@ namespace RockPapersScissors
     {
         //Used so that I can only have one instacne of config at any given time
         private static Config instance = new Config();
-        public static Weapons lastWinningWeapon;
-        public static int currentTurn = 0;
-        public static int comboSelectionRandom = 1;
-        public static int comboSelectionTactical = 2;
-        public static string humanBehavior = "Human Behavior";
-        public static string randomBehavior = "Random Behavior";
-        public static string tacticalBehavior = "Tacitcal Behavior";
-        public static PlayerInterface playerOne;
-        public static PlayerInterface playerTwo;
-        public static Weapons playerOneWeapon;
-        public static Weapons playerTwoWeapon;
+        private Weapons lastWinningWeapon;
+        private int currentTurn = 0;
+        private int comboSelectionRandom = 1;
+        private int comboSelectionTactical = 2;
+        private string humanBehavior = "Human Behavior";
+        private string randomBehavior = "Random Behavior";
+        private string tacticalBehavior = "Tacitcal Behavior";
+        private PlayerInterface playerOne;
+        private PlayerInterface playerTwo;
+        private Weapons playerOneWeapon;
+        private Weapons playerTwoWeapon;
+        private int counterpl1 = 0;
+        private int counterpl2 = 0;
+        private string winner;
+        private Random rando = new Random();
+
+        private Config()
+        {
+
+        }
+        public static Config getConfig()
+        {
+            return instance;
+        }
+
+        public Weapons LastWinningWeapon
+        {
+            get
+            {
+                return lastWinningWeapon;
+            }
+
+            set
+            {
+                lastWinningWeapon = value;
+            }
+        }
 
         public int CurrentTurn
         {
@@ -35,14 +61,173 @@ namespace RockPapersScissors
             }
         }
 
-        private Config()
+        public int ComboSelectionRandom
         {
-          
+            get
+            {
+                return comboSelectionRandom;
+            }
+
+            set
+            {
+                comboSelectionRandom = value;
+            }
         }
-        public static Config getConfig()
+
+        public int ComboSelectionTactical
         {
-            return instance;
+            get
+            {
+                return comboSelectionTactical;
+            }
+
+            set
+            {
+                comboSelectionTactical = value;
+            }
         }
-        
+
+        public string HumanBehavior
+        {
+            get
+            {
+                return humanBehavior;
+            }
+
+            set
+            {
+                humanBehavior = value;
+            }
+        }
+
+        public string RandomBehavior
+        {
+            get
+            {
+                return randomBehavior;
+            }
+
+            set
+            {
+                randomBehavior = value;
+            }
+        }
+
+        public string TacticalBehavior
+        {
+            get
+            {
+                return tacticalBehavior;
+            }
+
+            set
+            {
+                tacticalBehavior = value;
+            }
+        }
+
+        public PlayerInterface PlayerOne
+        {
+            get
+            {
+                return playerOne;
+            }
+
+            set
+            {
+                playerOne = value;
+            }
+        }
+
+        public PlayerInterface PlayerTwo
+        {
+            get
+            {
+                return playerTwo;
+            }
+
+            set
+            {
+                playerTwo = value;
+            }
+        }
+
+        public Weapons PlayerOneWeapon
+        {
+            get
+            {
+                return playerOneWeapon;
+            }
+
+            set
+            {
+                playerOneWeapon = value;
+            }
+        }
+
+        public Weapons PlayerTwoWeapon
+        {
+            get
+            {
+                return playerTwoWeapon;
+            }
+
+            set
+            {
+                playerTwoWeapon = value;
+            }
+        }
+
+        public int Counterpl1
+        {
+            get
+            {
+                return counterpl1;
+            }
+
+            set
+            {
+                counterpl1 = value;
+            }
+        }
+
+        public int Counterpl2
+        {
+            get
+            {
+                return counterpl2;
+            }
+
+            set
+            {
+                counterpl2 = value;
+            }
+        }
+
+        public string Winner
+        {
+            get
+            {
+                return winner;
+            }
+
+            set
+            {
+                winner = value;
+            }
+        }
+
+        public Random Rando
+        {
+            get
+            {
+                return rando;
+            }
+
+            set
+            {
+                rando = value;
+            }
+        }
     }
 }

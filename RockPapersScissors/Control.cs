@@ -9,48 +9,46 @@ namespace RockPapersScissors
 {
     class Control 
     {
+        
+        Config config = Config.getConfig();
 
-        /* *************** CHECK PLAYER COUNTERS BEFORE MOVING ONTO COMPUTER PLAYERS ************ */
-        Config config;
-        private static int counterpl1 = 0;
-        private static int counterpl2 = 0;
         private static  string winner = " ";
         private static string scoreBoard = "";
-        private static int gameCounter = 0;
-        private static string priorWinner = "";
 
 
         GeneralPlayer player1 = new GeneralPlayer(new HumanPlayer());
 
         public void WhoWins(Weapons weaponOne, Weapons weaponTwo)
         {
-            Console.WriteLine(weaponOne.ToString() + " " + weaponTwo.ToString());
+            Console.WriteLine(weaponOne + " " + weaponTwo);
             int option = 0;
             if (weaponOne.Equals(weaponTwo))
             {
                 option = 3;
             }
-            if (weaponOne.Equals(Weapons.ROCK) && weaponTwo.Equals(Weapons.PAPER) || weaponOne.Equals(Weapons.PAPER) && weaponTwo.Equals(Weapons.PAPER) || weaponOne.Equals(Weapons.SCISSORS) && weaponTwo.Equals(Weapons.ROCK))
+            if (weaponOne.Equals(Weapons.ROCK) && weaponTwo.Equals(Weapons.PAPER) || weaponOne.Equals(Weapons.PAPER) && weaponTwo.Equals(Weapons.SCISSORS) || weaponOne.Equals(Weapons.SCISSORS) && weaponTwo.Equals(Weapons.ROCK))
             {
-                Config.lastWinningWeapon = weaponTwo;
+                Config.getConfig().LastWinningWeapon = weaponTwo;
                 option = 1;
             }
             if (weaponOne.Equals(Weapons.ROCK) && weaponTwo.Equals(Weapons.SCISSORS) || weaponOne.Equals(Weapons.PAPER) && weaponTwo.Equals(Weapons.ROCK) || weaponOne.Equals(Weapons.SCISSORS) && weaponTwo.Equals(Weapons.PAPER))
             {
-                Config.lastWinningWeapon = weaponOne;
+                Config.getConfig().LastWinningWeapon = weaponOne;
                 option = 2;
             }
-            if (Counterpl1 == 2 || Counterpl2 == 2)
+            if  (Config.getConfig().Counterpl1 == 2 || Config.getConfig().Counterpl2 == 2)
             {
                 option = 4;
             }
             switch (option)
             {
-                case 1: Counterpl2 += 1;
+                case 1:
+                    config.Counterpl2 += 1;
                     Winner = "Player 2 wins! ";
                     theWinnerIs();
                     break;
-                case 2: Counterpl1 += 1;
+                case 2:
+                    config.Counterpl1 += 1;
                     Winner = "Player 1 wins! ";
                     theWinnerIs();
                     break;
@@ -65,7 +63,7 @@ namespace RockPapersScissors
         }
         public string thanksForPlaying()
         {
-            if (Counterpl1 == 2)
+            if (config.Counterpl1 == 2)
             {
                 Winner = "Player 1";
             }
@@ -73,13 +71,13 @@ namespace RockPapersScissors
             {
                 Winner = "Player 2";
             }
-            Counterpl1 = 0;
-            Counterpl2 = 0;
+            config.Counterpl1 = 0;
+            config.Counterpl2 = 0;
             return ScoreBoard = "Winner is " + Winner + " Thanks for playing!";
         }
         public string theWinnerIs()
         {
-            return ScoreBoard = Winner + "\n" + " Player One = " + Counterpl1 + " Player Two = " + Counterpl2;
+            return ScoreBoard = Winner + "\n" + " Player One = " + config.Counterpl1 + " Player Two = " + config.Counterpl2;
         }
         public string ScoreBoard
         {
@@ -94,31 +92,6 @@ namespace RockPapersScissors
             }
         }
 
-        public static int Counterpl1
-        {
-            get
-            {
-                return counterpl1;
-            }
-
-            set
-            {
-                counterpl1 = value;
-            }
-        }
-
-        public static int Counterpl2
-        {
-            get
-            {
-                return counterpl2;
-            }
-
-            set
-            {
-                counterpl2 = value;
-            }
-        }
 
         public static string Winner
         {

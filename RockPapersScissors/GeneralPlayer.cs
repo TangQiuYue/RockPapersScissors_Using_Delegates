@@ -8,6 +8,9 @@ namespace RockPapersScissors
 {
     class GeneralPlayer : PlayerInterface
     {
+
+        // If implementing new types of players, this would permit easily seeting up new players.
+        //this is currently unused.
         private PlayerInterface behavior;
 
         public GeneralPlayer(PlayerInterface behavior)

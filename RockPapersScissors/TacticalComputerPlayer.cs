@@ -8,17 +8,18 @@ namespace RockPapersScissors
 {
     class TacticalComputerPlayer : PlayerInterface
     {
+        Config config = Config.getConfig();
         private static Weapons weapon;
 
         public Weapons chooseYourWeapon()
         {
-            if (Config.currentTurn == 0)
+            if (config.CurrentTurn == 0)
             {
                 weapon = randomCall();
             }
             else 
             {
-                switch (Config.lastWinningWeapon)
+                switch (config.LastWinningWeapon)
                 {
                     case Weapons.ROCK:
                         weapon = Weapons.PAPER;
@@ -31,14 +32,14 @@ namespace RockPapersScissors
                         break;
                 }
             }
-            Config.currentTurn++;
+            config.CurrentTurn++;
             return weapon;
         }
 
         Weapons randomCall()
         {
-            Random rando = new Random();
-            int i = rando.Next(1, 3);
+           
+            int i = config.Rando.Next(1, 3);
 
             switch (i)
             {
@@ -58,7 +59,7 @@ namespace RockPapersScissors
         }
         public string getBehavior()
         {
-            return Config.tacticalBehavior;
+            return config.TacticalBehavior;
         }
 
     }
