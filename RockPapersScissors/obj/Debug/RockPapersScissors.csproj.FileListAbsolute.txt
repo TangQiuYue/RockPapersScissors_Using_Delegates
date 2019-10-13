@@ -12,5 +12,5 @@ C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScisso
 C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\RockPapersScissors.pdb
 C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\MainWindow.g.cs
 C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\MainWindow.baml
-C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\GameInterface.g.cs
-C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\GameInterface.baml
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\GamePlay.g.cs
+C:\Users\TQY_06\Desktop\Graphics\Course_Code\RockPapersScissors\RockPapersScissors\obj\Debug\GamePlay.baml

@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace RockPapersScissors
 {
-    interface PlayerInterface
+   public interface PlayerInterface
     {
-       void chooseYourWeapon();
+       Weapons chooseYourWeapon();
+
+       string getBehavior();
     }
 }

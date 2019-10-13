@@ -9,72 +9,37 @@ namespace RockPapersScissors
 {
     class Control 
     {
-        private  static int counterpl1 = 0;
+
+        /* *************** CHECK PLAYER COUNTERS BEFORE MOVING ONTO COMPUTER PLAYERS ************ */
+        Config config;
+        private static int counterpl1 = 0;
         private static int counterpl2 = 0;
         private static  string winner = " ";
         private static string scoreBoard = "";
         private static int gameCounter = 0;
         private static string priorWinner = "";
 
-        public string playerIsRandomComputer()
-        {
-            string weapon = "";
-            Random rando = new Random();
-            int i = rando.Next(1, 3);
 
-            switch (i)
-            {
-                case 1: weapon = "Rock";
-                    break;
-                case 2: weapon = "Paper";
-                    break;
-                case 3: weapon = "Scissors";
-                    break;
-            }
+        GeneralPlayer player1 = new GeneralPlayer(new HumanPlayer());
 
-            return weapon;
-        }
-        public string playerIsTacticalComputer()
+        public void WhoWins(Weapons weaponOne, Weapons weaponTwo)
         {
-            string weapon = "";
-            if (gameCounter == 0)
-            {
-               weapon = playerIsRandomComputer();
-            }
-            if(gameCounter > 0)
-            {
-                switch (priorWinner)
-                {
-                    case "Rock":weapon = "Paper";
-                        break;
-                    case "Paper": weapon = "Scissors";
-                        break;
-                    case "Scissors": weapon = "Rock";
-                        break;
-                }
-            }
-            gameCounter++;
-            return weapon;
-        }
-        public void WhoWins(string weaponOne, string weaponTwo)
-        {
-            Console.WriteLine(weaponOne + " and " + weaponTwo);
+            Console.WriteLine(weaponOne.ToString() + " " + weaponTwo.ToString());
             int option = 0;
             if (weaponOne.Equals(weaponTwo))
             {
                 option = 3;
             }
-            if (weaponOne.Equals("Rock") && weaponTwo.Equals("Paper") || weaponOne.Equals("Paper") && weaponTwo.Equals("Scissors") || weaponOne.Equals("Scissors") && weaponTwo.Equals("Rock"))
+            if (weaponOne.Equals(Weapons.ROCK) && weaponTwo.Equals(Weapons.PAPER) || weaponOne.Equals(Weapons.PAPER) && weaponTwo.Equals(Weapons.PAPER) || weaponOne.Equals(Weapons.SCISSORS) && weaponTwo.Equals(Weapons.ROCK))
             {
-                priorWinner = weaponTwo;
+                Config.lastWinningWeapon = weaponTwo;
                 option = 1;
             }
-            if (weaponOne.Equals("Rock") && weaponTwo.Equals("Scissors") || weaponOne.Equals("Paper") && weaponTwo.Equals("Rock") || weaponOne.Equals("Scissors") && weaponTwo.Equals("Paper"))
+            if (weaponOne.Equals(Weapons.ROCK) && weaponTwo.Equals(Weapons.SCISSORS) || weaponOne.Equals(Weapons.PAPER) && weaponTwo.Equals(Weapons.ROCK) || weaponOne.Equals(Weapons.SCISSORS) && weaponTwo.Equals(Weapons.PAPER))
             {
-                priorWinner = weaponOne;
+                Config.lastWinningWeapon = weaponOne;
                 option = 2;
             }
-            // This can be refactored to == 3 in order to make a best out of 5
             if (Counterpl1 == 2 || Counterpl2 == 2)
             {
                 option = 4;

@@ -55,9 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Config.cs" />
+    <Compile Include="GeneralPlayer.cs" />
+    <Compile Include="HumanPlayer.cs" />
     <Compile Include="PlayerInterface.cs" />
+    <Compile Include="RandomComputerPlayer.cs" />
+    <Compile Include="TacticalComputerPlayer.cs" />
     <Compile Include="Weapons.cs" />
-    <Page Include="GameInterface.xaml">
+    <Page Include="GamePlay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -70,8 +75,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Control.cs" />
-    <Compile Include="GameInterface.xaml.cs">
-      <DependentUpon>GameInterface.xaml</DependentUpon>
+    <Compile Include="GamePlay.xaml.cs">
+      <DependentUpon>GamePlay.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

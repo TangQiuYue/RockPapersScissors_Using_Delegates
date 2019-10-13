@@ -26,36 +26,45 @@ namespace RockPapersScissors
         {
             InitializeComponent();
             controller = new Control();
+            setPlayerOneBehavior();
+            setPlayerTwoBehavior();
             lockPlay();
         }
-        public bool IsPlayOneComputer()
+        public void setPlayerOneBehavior()
         {
-            bool isComputer = false;
-           if(((MainWindow)Application.Current.MainWindow).comboBoxOne.SelectedIndex == 1 || ((MainWindow)Application.Current.MainWindow).comboBoxOne.SelectedIndex == 2)
-            {
-                isComputer = true;
+            Config.playerOne = new HumanPlayer();
+            if (((MainWindow)Application.Current.MainWindow).comboBoxOne.SelectedIndex == Config.comboSelectionRandom) {
+                Config.playerOne = new RandomComputerPlayer();
             }
-            return isComputer;
+            
+            if(((MainWindow)Application.Current.MainWindow).comboBoxOne.SelectedIndex == Config.comboSelectionTactical)
+            {
+                Config.playerOne = new TacticalComputerPlayer();
+            }
         }
-        public bool isPlayerTwoComputer()
+        public void setPlayerTwoBehavior()
         {
-            bool isComputer = false; 
-            if (((MainWindow)Application.Current.MainWindow).comboBoxTwo.SelectedIndex == 1 || ((MainWindow)Application.Current.MainWindow).comboBoxTwo.SelectedIndex == 2)
+
+            Config.playerTwo = new HumanPlayer();
+            if (((MainWindow)Application.Current.MainWindow).comboBoxTwo.SelectedIndex == Config.comboSelectionRandom)
             {
-                isComputer = true;
+                Config.playerTwo = new RandomComputerPlayer();
             }
-            return isComputer;
+
+            if (((MainWindow)Application.Current.MainWindow).comboBoxTwo.SelectedIndex == Config.comboSelectionTactical)
+            {
+                Config.playerTwo = new TacticalComputerPlayer();
+            }
         }
         public void lockPlay()
         {
-           
-            if (IsPlayOneComputer())
+            if (Config.playerOne.getBehavior().Equals(Config.randomBehavior) || Config.playerOne.getBehavior() == Config.tacticalBehavior)
             {
                 rockBtn.IsEnabled = false;
                 paperBtn.IsEnabled = false;
                 scissorsBtn.IsEnabled = false;
             }
-            if (isPlayerTwoComputer())
+            if (Config.playerTwo.getBehavior() == Config.randomBehavior || Config.playerTwo.getBehavior() == Config.tacticalBehavior)
             {
                 rockTwoBtn.IsEnabled = false;
                 paperTwoBtn.IsEnabled = false;
@@ -64,29 +73,16 @@ namespace RockPapersScissors
         }
         private void goBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (IsPlayOneComputer())
-            {
-                weaponLbl.Content = whosPlayingPlayerOne();
-            }
-
-            controller.WhoWins(weaponLbl.Content.ToString(), weaponTwoLbl.Content.ToString());
+            controller.WhoWins(Config.playerOneWeapon, Config.playerTwoWeapon);
             MessageBox.Show(controller.ScoreBoard.ToString());
         }
-        private string whosPlayingPlayerOne()
+    
+        private void weaponPlayerOne(Weapons weapon)
         {
-            if (((MainWindow)Application.Current.MainWindow).comboBoxOne.SelectedIndex == 1)
-            {
-                weaponLbl.Content = controller.playerIsRandomComputer();
-            }
-            if (((MainWindow)Application.Current.MainWindow).comboBoxOne.SelectedIndex == 2)
-            {
-                weaponLbl.Content = controller.playerIsTacticalComputer();
-            }
-            return weaponLbl.Content.ToString();
-        }
-        private void weaponPlayerOne(string weapon)
-        {
-            firstPlayerWeapon = weapon;
+            MessageBox.Show(Config.playerOne.getBehavior().ToString() + " " + Config.humanBehavior);
+            if (Config.playerOne.getBehavior().Equals(Config.humanBehavior))
+                Config.playerOneWeapon = weapon;
+                MessageBox.Show(weapon.ToString());
         }
 
         private void rockBtn_Click(object sender, RoutedEventArgs e)
@@ -95,7 +91,7 @@ namespace RockPapersScissors
             rockBtn.BorderBrush = Brushes.Red;
             clearScissorsAndPaperBorder();
             weaponLbl.Content = "Rock";
-            weaponPlayerOne(weaponLbl.Content.ToString());
+            weaponPlayerOne(Weapons.ROCK);
         }
 
         private void paperBtn_Click(object sender, RoutedEventArgs e)
@@ -104,7 +100,7 @@ namespace RockPapersScissors
             paperBtn.BorderBrush = Brushes.Red;
             clearRockAndScissorsBorder();
             weaponLbl.Content = "Paper";
-            weaponPlayerOne(weaponLbl.Content.ToString());
+            weaponPlayerOne(Weapons.PAPER);
         }
 
         private void scissorsBtn_Click(object sender, RoutedEventArgs e)
@@ -113,15 +109,21 @@ namespace RockPapersScissors
             scissorsBtn.BorderBrush = Brushes.Red;
             clearPaperAndRockBorder();
             weaponLbl.Content = "Scissors";
-            weaponPlayerOne(weaponLbl.Content.ToString());
+            weaponPlayerOne(Weapons.SCISSORS);
         }
-
+        private void weaponPlayerTwo(Weapons weapon)
+        {
+            if (Config.playerTwo.getBehavior().Equals(Config.humanBehavior))
+                Config.playerTwoWeapon = weapon;
+            MessageBox.Show(weapon.ToString());
+        }
         private void rockTwoBtn_Click(object sender, RoutedEventArgs e)
         {
             rockTwoBtn.BorderThickness = new Thickness(3);
             rockTwoBtn.BorderBrush = Brushes.Red;
             clearScissorsAndPaperTwoBorder();
             weaponTwoLbl.Content = "Rock";
+            weaponPlayerTwo(Weapons.ROCK);
         }
 
         private void paperTwoBtn_Click(object sender, RoutedEventArgs e)
@@ -130,6 +132,7 @@ namespace RockPapersScissors
             paperTwoBtn.BorderBrush = Brushes.Red;
             clearRockAndScissorsTwoBorder();
             weaponTwoLbl.Content = "Paper";
+            weaponPlayerTwo(Weapons.PAPER);
         }
 
         private void scissorsTwoBtn_Click(object sender, RoutedEventArgs e)
@@ -138,6 +141,7 @@ namespace RockPapersScissors
             scissorsTwoBtn.BorderBrush = Brushes.Red;
             clearPaperAndRockTwoBorder();
             weaponTwoLbl.Content = "Scissors";
+            weaponPlayerTwo(Weapons.SCISSORS);
         }
         private void clearRockAndScissorsBorder()
         {

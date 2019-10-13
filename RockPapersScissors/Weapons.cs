@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RockPapersScissors
 {
-    enum Weapons
+  public enum Weapons
     {
         ROCK, 
         PAPER,
